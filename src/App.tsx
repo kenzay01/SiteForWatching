@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeScreen from "./pages/HomeScreen";
+import WatchingScreen from "./pages/WatchingScreen";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -9,7 +10,7 @@ export default function App() {
     },
     {
       path: "/anime/:animeName",
-      element: <h1>anime</h1>,
+      element: <WatchingScreen />,
     },
   ]);
   return <RouterProvider router={router} />;

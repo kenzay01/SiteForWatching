@@ -3,14 +3,14 @@
 }
 .main-header {
   position: absolute;
-  top: 10px;
+  top: 40px;
   left: 0;
   width: 100%;
-  background-color: transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   z-index: 100;
+  font-size: 1em;
 }
 .header-icons {
   display: flex;
