@@ -16,7 +16,7 @@
   text-align: center;
   border-radius: 0 0 60px 60px;
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.7));
-  border: 5px solid #493d9e;
+  border: 10px solid #493d9e;
   border-top: none;
 }
 .main-image img {

@@ -115,16 +115,37 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px 40px;
-  /* overflow-y: scroll; */
 }
 .watching-screen-rgt {
   display: flex;
   flex-direction: column;
   padding: 20px 20px 20px 30px;
+  overflow-y: auto;
+  max-height: 100vh;
+  scrollbar-width: thin;
+  scrollbar-color: #3e348a #5e52b7;
 }
+.watching-screen-rgt::-webkit-scrollbar {
+  width: 8px;
+}
+
+.watching-screen-rgt::-webkit-scrollbar-track {
+  background: #3e348a;
+  border-radius: 10px;
+}
+
+.watching-screen-rgt::-webkit-scrollbar-thumb {
+  background: #3e348a;
+  border-radius: 10px;
+}
+
+.watching-screen-rgt::-webkit-scrollbar-thumb:hover {
+  background: #3e348a;
+}
+
 .playzone {
   width: 100%;
-  height: 350px;
+  min-height: 350px;
   background-color: black;
 }
 .playzone-description-content {
@@ -134,18 +155,20 @@
   max-height: 150px;
   overflow: hidden;
   position: relative;
-  text-overflow: ellipsis;
+  text-overflow: clip;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   transition: max-height 0.3s ease-in-out;
   color: #efe9d5;
 }
-.playzone-description-content h1 {
+.playzone-description-content h1,
+.playzone-random-comments h1 {
   font-weight: bold;
   filter: drop-shadow(0 0px 3px rgba(0, 0, 0, 1));
   font-size: 1em;
   text-decoration: underline;
+  margin-bottom: 10px;
 }
 
 .playzone-description-content.expanded {
@@ -166,15 +189,20 @@
 }
 
 .toggle-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
   background: none;
   border: none;
   color: #efe9d5;
   font-size: 1em;
   cursor: pointer;
-  text-decoration: underline;
   margin-top: 5px;
   display: block;
   text-align: center;
+  padding: 1px 5px 3px 5px;
+  border-radius: 5px;
+  background-color: #493d9e;
 }
 .playzone-description {
   font-weight: normal;
@@ -201,7 +229,7 @@
   transition: scroll 0.3s ease-in-out;
 }
 .image {
-  height: 175px;
+  height: 150px;
   margin: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -255,4 +283,28 @@
   max-height: 60%;
   border-radius: 20px;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+}
+.playzone-discription-comments {
+  display: flex;
+  gap: 20px;
+}
+.playzone-description-expand {
+  position: relative;
+  flex: 1;
+}
+.playzone-random-comments {
+  color: #efe9d5;
+  flex: 1;
+  padding: 15px 30px;
+  background-color: #3e348a;
+  border-radius: 20px;
+  max-height: 150px;
+}
+.playzone-random-comment {
+  margin: 8px 0;
+  font-size: 0.9em;
+  font-weight: normal;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background-color: #5e52b7;
 }
