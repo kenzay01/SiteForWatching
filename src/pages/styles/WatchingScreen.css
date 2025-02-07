@@ -149,7 +149,7 @@
   background-color: black;
 }
 .playzone-description-content {
-  padding: 15px 30px;
+  padding: 15px 30px 30px 30px;
   background-color: #3e348a;
   border-radius: 20px;
   max-height: 150px;
@@ -157,7 +157,7 @@
   position: relative;
   text-overflow: clip;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  line-clamp: 6;
   -webkit-box-orient: vertical;
   transition: max-height 0.3s ease-in-out;
   color: #efe9d5;
@@ -173,7 +173,7 @@
 
 .playzone-description-content.expanded {
   max-height: none;
-  -webkit-line-clamp: unset;
+  line-clamp: unset;
 }
 .playzone-description-content.expanded::after {
   display: none;
