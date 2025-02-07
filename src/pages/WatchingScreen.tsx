@@ -31,8 +31,8 @@ export default function WatchingScreen() {
   }, [animeName.description]);
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
-  const [images, setImages] = useState([...animeName.epidsodes_screens]);
-  console.log(images);
+  const images = animeName.epidsodes_screens;
+  const [currentImage, setCurrentImage] = useState("");
   const scrollImages = (direction: number) => {
     const container = sliderRef.current;
     if (container) {
@@ -50,6 +50,14 @@ export default function WatchingScreen() {
       });
     }
   };
+
+  useEffect(() => {
+    if (currentImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [currentImage]);
 
   return (
     <div className="watching-screen-content">
@@ -123,6 +131,7 @@ export default function WatchingScreen() {
                   alt="sliderImage"
                   key={index}
                   src={image}
+                  onClick={() => setCurrentImage(image)}
                 />
               ))}
             </div>
@@ -132,6 +141,11 @@ export default function WatchingScreen() {
           </div>
         </div>
       </div>
+      {currentImage ? (
+        <div className="image-modal" onClick={() => setCurrentImage("")}>
+          <img src={currentImage} alt="" />
+        </div>
+      ) : null}
     </div>
   );
 }
