@@ -2,11 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-export default function MainImageBunner({
-  animeList,
-}: {
-  animeList: { name: string; img: string; link: string }[];
-}) {
+import type { Anime } from "../types/Anime";
+export default function MainImageBunner({ animeList }: { animeList: Anime[] }) {
   const navigate = useNavigate();
   const [currentAnime, setCurrentAnime] = useState(0);
   const changeAnime = (direction: "left" | "right") => {

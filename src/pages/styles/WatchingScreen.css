@@ -115,4 +115,125 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px 40px;
+  /* overflow-y: scroll; */
+}
+.watching-screen-rgt {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 30px;
+}
+.playzone {
+  width: 100%;
+  height: 350px;
+  background-color: black;
+}
+.playzone-description-content {
+  padding: 15px 30px;
+  background-color: #3e348a;
+  border-radius: 20px;
+  max-height: 150px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.3s ease-in-out;
+  color: #efe9d5;
+}
+.playzone-description-content h1 {
+  font-weight: bold;
+  filter: drop-shadow(0 0px 3px rgba(0, 0, 0, 1));
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.playzone-description-content.expanded {
+  max-height: none;
+  -webkit-line-clamp: unset;
+}
+.playzone-description-content.expanded::after {
+  display: none;
+}
+.playzone-description-content.collapsed::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(3, 3, 3, 0), rgb(26, 21, 58));
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #efe9d5;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 5px;
+  display: block;
+  text-align: center;
+}
+.playzone-description {
+  font-weight: normal;
+  /* filter: drop-shadow(0 0px 3px rgba(0, 0, 0, 1)); */
+  font-size: 0.9em;
+}
+.playzone-short-imgs {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 10px;
+  padding: 20px 10px;
+  background-color: #3e348a;
+  border-radius: 20px;
+  justify-content: center;
+  flex-basis: auto;
+}
+.images-container {
+  display: flex;
+  max-width: 600px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  transition: scroll 0.3s ease-in-out;
+}
+.image {
+  height: 175px;
+  margin: 5px;
+  border-radius: 8px;
+}
+.nav-btn {
+  position: absolute;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-color: #5e52b7;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  margin: 5px;
+  top: 50%;
+  transform: translateY(-55%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #efe9d5;
+}
+.nav-btn-arr {
+  font-size: 1.9em;
+}
+.nav-btn.lft {
+  left: 0px;
+  padding: 1px 3px 1px 0px;
+}
+.nav-btn.rgt {
+  right: 0px;
+  padding: 1px 0px 1px 3px;
 }
