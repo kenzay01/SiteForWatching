@@ -79,6 +79,7 @@ export default function WatchingScreen() {
         setRating={setRating}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
+        setCurrentImage={setCurrentImage}
       />
       <WatchingZoneRightSide
         isPlaying={isPlaying}

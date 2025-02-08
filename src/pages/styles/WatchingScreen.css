@@ -21,6 +21,7 @@
   filter: drop-shadow(0 3px 20px rgba(0, 0, 0, 0.7));
 }
 .watching-screen-img {
+  position: relative;
   width: 400px;
   height: 400px;
   object-fit: cover;
@@ -29,6 +30,22 @@
   border: 5px solid #5e52b7;
   filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.7));
   margin-bottom: 20px;
+}
+.watching-screen-play-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #493d9e;
+  border: 5px solid #3d3677;
+  border-bottom: none;
+  border-right: none;
+  padding: 5px 15px;
+  border-radius: 10px 0 0 0;
+
+  color: #efe9d5;
+  font-size: 1em;
+  font-weight: normal;
+  cursor: pointer;
 }
 .watching-screen-img img {
   width: 100%;

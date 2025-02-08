@@ -7,18 +7,29 @@ export default function WatchingZoneLeftSide({
   setRating,
   isPlaying,
   setIsPlaying,
+  setCurrentImage,
 }: {
   animeName: Anime;
   rating: number;
   setRating: (rating: number) => void;
   isPlaying: boolean;
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  setCurrentImage: (logo: string) => void;
 }) {
   return (
     <div className="watching-screen-lft">
       <div className="watching-screen-play-name">{animeName.name}</div>
-      <div className="watching-screen-img">
+      <div
+        className="watching-screen-img"
+        // onClick={() => setCurrentImage(animeName.logo)}
+      >
         <img src={animeName.logo} alt="" />
+        <div
+          className="watching-screen-play-btn"
+          onClick={() => setCurrentImage(animeName.logo)}
+        >
+          full size
+        </div>
       </div>
       <div className="watching-screen-play">
         <div className="watching-ranking">
