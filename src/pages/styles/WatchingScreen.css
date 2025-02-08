@@ -49,6 +49,11 @@
   font-size: 1.75em;
   filter: drop-shadow(0 0px 3px rgba(0, 0, 0, 1));
   margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  text-overflow: clip;
+  width: 80%;
+  text-align: center;
 }
 
 .watching-ranking {
@@ -161,6 +166,7 @@
   -webkit-box-orient: vertical;
   transition: max-height 0.3s ease-in-out;
   color: #efe9d5;
+  filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
 }
 .playzone-description-content h1,
 .playzone-random-comments h1 {
@@ -214,7 +220,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  /* gap: 100px; */
+  filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
   padding: 20px 10px;
   background-color: #3e348a;
   border-radius: 20px;
@@ -299,6 +305,7 @@
   background-color: #3e348a;
   border-radius: 20px;
   max-height: 150px;
+  filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
 }
 .playzone-random-comment {
   margin: 8px 0;

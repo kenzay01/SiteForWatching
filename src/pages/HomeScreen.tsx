@@ -9,7 +9,7 @@ export default function HomeScreen({ animeList }: { animeList: Anime[] }) {
     .slice(0, 5);
   return (
     <div className="home-container">
-      <HomeHeader />
+      <HomeHeader animeList={animeList} />
       <MainImageBunner animeList={randomAnimesForBanner} />
       <Outlet />
     </div>
