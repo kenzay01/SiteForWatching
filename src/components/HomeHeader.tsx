@@ -1,7 +1,7 @@
 import "./styles/HomeHeader.css";
 import { IoSearch } from "react-icons/io5";
 import { useState, useRef, useMemo } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { Anime } from "../types/Anime";
 
 export default function Header({ animeList }: { animeList: Anime[] }) {

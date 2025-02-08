@@ -1,5 +1,6 @@
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import type { Anime } from "../types/Anime";
+
 export default function WatchingZoneRightSide({
   isPlaying,
   animeName,
@@ -7,23 +8,31 @@ export default function WatchingZoneRightSide({
   setCurrentImage,
   sliderRef,
   descriptionRef,
-  isExpanded,
-  setIsExpanded,
-  isOverflowing,
+  commentsRef,
+  isDescriptionExpanded,
+  setIsDescriptionExpanded,
+  isCommentsExpanded,
+  setIsCommentsExpanded,
+  isDescriptionOverflowing,
+  isCommentsOverflowing,
   randomizedComments,
   scrollImages,
 }: {
   isPlaying: boolean;
   animeName: Anime;
   images: string[];
-  setCurrentImage: any;
-  sliderRef: any;
-  descriptionRef: any;
-  isExpanded: boolean;
-  setIsExpanded: any;
-  isOverflowing: boolean;
+  setCurrentImage: (image: string) => void;
+  sliderRef: React.RefObject<HTMLDivElement>;
+  descriptionRef: React.RefObject<HTMLDivElement>;
+  commentsRef: React.RefObject<HTMLDivElement>;
+  isDescriptionExpanded: boolean;
+  setIsDescriptionExpanded: (expanded: boolean) => void;
+  isCommentsExpanded: boolean;
+  setIsCommentsExpanded: (expanded: boolean) => void;
+  isDescriptionOverflowing: boolean;
+  isCommentsOverflowing: boolean;
   randomizedComments: string[];
-  scrollImages: any;
+  scrollImages: (direction: number) => void;
 }) {
   return (
     <div className="watching-screen-rgt">
@@ -33,37 +42,53 @@ export default function WatchingZoneRightSide({
         </div>
       )}
       <div className="playzone-description-container">
-        <div className="playzone-discription-comments">
+        <div className="playzone-description-comments">
           <div className="playzone-description-expand">
             <div
               className={`playzone-description-content ${
-                isExpanded ? "expanded" : "collapsed"
+                isDescriptionExpanded ? "expanded" : "collapsed"
               }`}
               ref={descriptionRef}
             >
-              <h1>Description: </h1>
+              <h1>Description:</h1>
               <div className="playzone-description">
                 {animeName.description}
               </div>
             </div>
-            {isOverflowing && (
+            {isDescriptionOverflowing && (
               <button
-                className="toggle-btn"
-                onClick={() => setIsExpanded(!isExpanded)}
+                className="toggle-btn description"
+                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
               >
-                {isExpanded ? "unfold" : "roll up"}
+                {isDescriptionExpanded ? "show less" : "show more"}
               </button>
             )}
           </div>
-          <div className="playzone-random-comments">
-            <h1>Random comments:</h1>
-            {randomizedComments.map((comment, index) => (
-              <div key={index} className="playzone-random-comment">
-                {comment}
-              </div>
-            ))}
+          <div className="playzone-description-expand">
+            <div
+              className={`playzone-random-comments ${
+                isCommentsExpanded ? "expanded" : "collapsed"
+              }`}
+              ref={commentsRef}
+            >
+              <h1>Random comments:</h1>
+              {randomizedComments.map((comment, index) => (
+                <div key={index} className="playzone-random-comment">
+                  {comment}
+                </div>
+              ))}
+            </div>
+            {isCommentsOverflowing && (
+              <button
+                className="toggle-btn comments"
+                onClick={() => setIsCommentsExpanded(!isCommentsExpanded)}
+              >
+                {isCommentsExpanded ? "show less" : "show more"}
+              </button>
+            )}
           </div>
         </div>
+
         <div className="playzone-short-imgs">
           <button className="nav-btn lft" onClick={() => scrollImages(-1)}>
             <IoIosArrowBack className="nav-btn-arr" />

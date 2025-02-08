@@ -29,11 +29,15 @@ export default function WatchingScreen() {
   const { animeName } = location.state;
   const [rating, setRating] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(true);
-  const [isOverflowing, setIsOverflowing] = useState(false);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(true);
+  const [isCommentsExpanded, setIsCommentsExpanded] = useState(true);
+  const [isDescriptionOverflowing, setIsDescriptionOverflowing] =
+    useState(false);
+  const [isCommentsOverflowing, setIsCommentsOverflowing] = useState(false);
   const [randomizedComments, setRandomizedComments] = useState<string[]>([]);
 
   const descriptionRef = useRef<HTMLDivElement>(null);
+  const commentsRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const images = animeName.epidsodes_screens;
   const [currentImage, setCurrentImage] = useState("");
@@ -41,15 +45,21 @@ export default function WatchingScreen() {
   useEffect(() => {
     const checkOverflow = () => {
       if (descriptionRef.current) {
-        setIsOverflowing(descriptionRef.current.scrollHeight > 150);
-        setIsExpanded(!(descriptionRef.current.scrollHeight > 150));
+        const isDescOverflowing = descriptionRef.current.scrollHeight > 150;
+        setIsDescriptionOverflowing(isDescOverflowing);
+        setIsDescriptionExpanded(!isDescOverflowing);
+      }
+      if (commentsRef.current) {
+        const isCommOverflowing = commentsRef.current.scrollHeight > 150;
+        setIsCommentsOverflowing(isCommOverflowing);
+        setIsCommentsExpanded(!isCommOverflowing);
       }
     };
 
     checkOverflow();
     window.addEventListener("resize", checkOverflow);
     return () => window.removeEventListener("resize", checkOverflow);
-  }, [animeName.description]);
+  }, [animeName.description, randomizedComments]);
 
   useEffect(() => {
     setRandomizedComments(getRandomComments(randomComments));
@@ -69,37 +79,43 @@ export default function WatchingScreen() {
   };
 
   return (
-    <div className="watching-screen-content">
-      <div className="return-btn" onClick={() => navigate(-1)}>
-        <IoReturnDownBack />
-      </div>
-      <WatchingZoneLeftSide
-        animeName={animeName}
-        rating={rating}
-        setRating={setRating}
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        setCurrentImage={setCurrentImage}
-      />
-      <WatchingZoneRightSide
-        isPlaying={isPlaying}
-        animeName={animeName}
-        isExpanded={isExpanded}
-        setIsExpanded={setIsExpanded}
-        isOverflowing={isOverflowing}
-        randomizedComments={randomizedComments}
-        images={images}
-        sliderRef={sliderRef}
-        setCurrentImage={setCurrentImage}
-        descriptionRef={descriptionRef}
-        scrollImages={scrollImages}
-      />
-
-      {currentImage && (
-        <div className="image-modal" onClick={() => setCurrentImage("")}>
-          <img src={currentImage} alt="" />
+    <div className="watching-screen">
+      <div className="watching-screen-content">
+        <div className="return-btn" onClick={() => navigate(-1)}>
+          <IoReturnDownBack />
         </div>
-      )}
+        <WatchingZoneLeftSide
+          animeName={animeName}
+          rating={rating}
+          setRating={setRating}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          setCurrentImage={setCurrentImage}
+        />
+        <WatchingZoneRightSide
+          isPlaying={isPlaying}
+          animeName={animeName}
+          isDescriptionExpanded={isDescriptionExpanded}
+          setIsDescriptionExpanded={setIsDescriptionExpanded}
+          isCommentsExpanded={isCommentsExpanded}
+          setIsCommentsExpanded={setIsCommentsExpanded}
+          isDescriptionOverflowing={isDescriptionOverflowing}
+          isCommentsOverflowing={isCommentsOverflowing}
+          randomizedComments={randomizedComments}
+          images={images}
+          sliderRef={sliderRef}
+          setCurrentImage={setCurrentImage}
+          descriptionRef={descriptionRef}
+          commentsRef={commentsRef}
+          scrollImages={scrollImages}
+        />
+
+        {currentImage && (
+          <div className="image-modal" onClick={() => setCurrentImage("")}>
+            <img src={currentImage} alt="" />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

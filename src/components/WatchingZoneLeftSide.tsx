@@ -19,10 +19,7 @@ export default function WatchingZoneLeftSide({
   return (
     <div className="watching-screen-lft">
       <div className="watching-screen-play-name">{animeName.name}</div>
-      <div
-        className="watching-screen-img"
-        // onClick={() => setCurrentImage(animeName.logo)}
-      >
+      <div className="watching-screen-img">
         <img src={animeName.logo} alt="" />
         <div
           className="watching-screen-play-btn"
