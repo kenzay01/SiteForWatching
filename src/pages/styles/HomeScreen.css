@@ -18,48 +18,74 @@
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.7));
   border: 10px solid #493d9e;
   border-top: none;
+  display: flex;
+  flex-direction: column;
+}
+.main-image-content {
+  width: 100%;
+  height: 100%;
+  background-color: #5e52b7;
+  display: flex;
+  border-top: 5px solid #493d9e;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 5px 150px;
 }
 .main-image img {
   width: 100%;
-  height: 100%;
+  height: 85%;
   object-fit: cover;
   user-select: none;
 }
-.home-content-name {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: transparent;
-  filter: drop-shadow(0 0 20px rgb(0, 0, 0, 1));
-  text-align: center;
-  /* padding: 10px; */
-  font-size: 2em;
-  background-color: #5e52b7;
-  border: 5px solid #493d9e;
-  padding: 15px 80px;
-  border-radius: 40px 20px;
-  color: #efe9d5;
-  max-width: 600px;
+.main-image-content-name-rating {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
   user-select: none;
+  color: #efe9d5;
 }
-
-.home-content-btn {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 15px 40px;
+.main-image-content-name {
   font-size: 2.25em;
-  border-radius: 20px 30px;
+}
+.main-image-content-rating {
+  font-size: 1.25em;
+  font-weight: normal;
+  /* text-decoration: underline; */
+}
+.main-image-content-rating span {
+  padding: 0 7px 1px 7px;
+  border-radius: 10px;
+  background-color: #493d9e;
+  /* text-decoration: none; */
+}
+.home-content-btn {
+  flex: 2;
+  padding: 5px 20px;
+  font-size: 2em;
+  border-radius: 20px 20px;
   outline: none;
   border: none;
   color: #efe9d5;
   background-color: #5e52b7;
-  border: 5px solid #493d9e;
+  border: 3px solid #493d9e;
   cursor: pointer;
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
   user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+.home-content-btn:hover {
+  background-color: #493d9e;
+  .main-image-arrow-go {
+    color: #5e52b7;
+  }
+}
+.main-image-arrow-go {
+  font-size: 1.25em;
+  color: #493d9e;
 }
 .swap-main-img-btn {
   width: 75px;
@@ -76,13 +102,13 @@
 
 .swap-main-img-btn.lft {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 2%;
   padding-right: 5px;
 }
 .swap-main-img-btn.rgt {
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 2%;
   padding-left: 5px;
 }

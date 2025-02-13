@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import type { Anime } from "../types/Anime";
+import { TbArrowBigRightLineFilled } from "react-icons/tb";
+
 export default function MainImageBunner({ animeList }: { animeList: Anime[] }) {
   const navigate = useNavigate();
   const [currentAnime, setCurrentAnime] = useState(0);
@@ -17,10 +19,31 @@ export default function MainImageBunner({ animeList }: { animeList: Anime[] }) {
     <div className="main-image-bunner">
       <div className="main-image">
         <img src={animeList[currentAnime].img} alt="Main" />
+        <div className="main-image-content">
+          <div className="main-image-content-name-rating">
+            <div className="main-image-content-name">
+              {animeList[currentAnime].name}
+            </div>
+            <div className="main-image-content-rating">
+              Rating: <span>{animeList[currentAnime].avg_rating}</span>
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              navigate(`/anime/${animeList[currentAnime].link}`, {
+                state: { animeName: animeList[currentAnime] },
+              });
+            }}
+            className="home-content-btn"
+          >
+            watch now
+            <TbArrowBigRightLineFilled className="main-image-arrow-go" />
+          </button>
+        </div>
       </div>
       <div>
-        <h1 className="home-content-name">{animeList[currentAnime].name}</h1>
-        <button
+        {/* <h1 className="home-content-name">{animeList[currentAnime].name}</h1> */}
+        {/* <button
           onClick={() => {
             navigate(`/anime/${animeList[currentAnime].link}`, {
               state: { animeName: animeList[currentAnime] },
@@ -29,7 +52,7 @@ export default function MainImageBunner({ animeList }: { animeList: Anime[] }) {
           className="home-content-btn"
         >
           watch now
-        </button>
+        </button> */}
       </div>
       <div
         onClick={() => {
