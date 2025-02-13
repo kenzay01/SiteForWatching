@@ -87,14 +87,19 @@
 .watching-stars {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 3px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.watching-stars:hover {
+  transform: scale(1.1);
 }
 .star-btn {
   color: rgb(255, 217, 0);
-  font-size: 1.5em;
-  cursor: pointer;
+  font-size: 1.8em;
   filter: drop-shadow(0 3px 5px rgba(255, 217, 0, 0.7));
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 .watching-ranking-info {
   display: flex;
@@ -132,7 +137,7 @@
   color: #efe9d5;
   font-size: 1.5em;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1;
   border: 2px solid #5e52b7;
 }
 .watching-screen-rgt {
@@ -357,4 +362,48 @@
 .toggle-btn.comments {
   right: 10px;
   z-index: 10;
+}
+.rating-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.rating-modal-content {
+  background: #5e52b7;
+  border: 5px #3d3677 solid;
+  padding: 10px 20px 20px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.star-btn.modal {
+  font-size: 25px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.rating-modal-rate {
+  font-size: 5em;
+  color: #efe9d5;
 }

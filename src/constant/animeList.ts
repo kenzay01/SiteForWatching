@@ -5,12 +5,14 @@ export const animeList = [
     logo: "https://blob.cede.ch/catalog/18313000/18313441_1_92.jpg",
     link: "jujutsu-kaisen",
     description:
-      "Jujutsu Kaisen is a Japanese manga series written and illustrated by Gege Akutami, serialized in Shueisha's Weekly Shōnen Jump since March 2018. The individual chapters are collected and published by Shueisha, with sixteen tankōbon volumes released as of October 2021.",
+      "Jujutsu Kaisen is a Japanese manga series written and illustrated by Gege Akutami, serialized in Shueisha's Weekly Shōnen Jump since March 2018.",
     epidsodes_screens: [
       "https://static.animecorner.me/2024/03/1709576548-24674-768x432.jpg",
       "https://staticg.sportskeeda.com/editor/2023/07/22f7e-16883851024546-1920.jpg?w=640",
       "https://animeblurayuk.wordpress.com/wp-content/uploads/2022/03/jujutsu-kaisen-screen.jpg",
     ],
+    avg_rating: 8.7,
+    genres: ["Action", "Supernatural", "Dark Fantasy", "Shounen"],
   },
   {
     name: "Naruto",
@@ -18,39 +20,44 @@ export const animeList = [
     logo: "https://m.media-amazon.com/images/I/81ZupeVm6vL._AC_UF1000,1000_QL80_.jpg",
     link: "naruto",
     description:
-      "Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto. It tells the story of Naruto Uzumaki, a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village.",
+      "Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto. It tells the story of Naruto Uzumaki, a young ninja who seeks recognition from his peers and dreams of becoming the Hokage.",
     epidsodes_screens: [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/08/naruto.jpg",
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/07/Naruto-Shippuden.jpg",
       "https://www.thepopverse.com/_next/image?url=https%3A%2F%2Fmedia.thepopverse.com%2Fmedia%2Fnaruto-watch-order-1-bobpip3kpzrfzgumlyynkffxqy.png&w=1280&q=75",
     ],
+    avg_rating: 8.3,
+    genres: ["Action", "Adventure", "Martial Arts", "Shounen"],
   },
   {
     name: "My Hero Academia",
     img: "https://cdn.europosters.eu/image/hp/65704.jpg",
-    link: "my-hero-academia",
     logo: "https://m.media-amazon.com/images/M/MV5BNzgxMzI3NzgtYzE2Zi00MzlmLThlNWEtNWVmZWEyZjNkZWYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    link: "my-hero-academia",
     description:
-      "My Hero Academia is a Japanese superhero manga series written and illustrated by Kōhei Horikoshi. It has been serialized in Weekly Shōnen Jump since July 2014, with its chapters additionally collected into 30 tankōbon volumes as of April 2021.",
+      "My Hero Academia is a Japanese superhero manga series written and illustrated by Kōhei Horikoshi. It has been serialized in Weekly Shōnen Jump since July 2014.",
     epidsodes_screens: [
       "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2022/06/my-hero-academia-season-five-ova-two-visual-e1654313420822.jpg?resize=696%2C394&ssl=1",
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/03/my-hero-academia-season-7-visual.jpg",
       "https://pbs.twimg.com/media/GNsq_WvWYAA3LYd?format=jpg&name=4096x4096",
-      "https://www.animenewsnetwork.com/thumbnails/crop1200x630gEQ/cms/episode-review.3/173876/screenshot-5170-.png.jpg",
     ],
+    avg_rating: 7.9,
+    genres: ["Action", "Superhero", "School", "Shounen"],
   },
   {
     name: "Attack on Titan",
     img: "https://m.media-amazon.com/images/S/pv-target-images/7c1672bcbb985231df92ac310cbb162b182443f781dd4b3e66fe67b53a01f936.jpg",
-    link: "attack-on-titan",
     logo: "https://wildfaery.com/info/images/Attack_on_Titan/20241105_AOT_WebLFS%20(640%20x%20960)_05.jpg",
+    link: "attack-on-titan",
     description:
-      "Attack on Titan is a Japanese manga series written and illustrated by Hajime Isayama. It is set in a world where humanity lives within territories surrounded by three enormous walls that protect them from gigantic humanoids known as Titans.",
+      "Attack on Titan is a Japanese manga series written and illustrated by Hajime Isayama. It is set in a world where humanity lives within territories surrounded by three enormous walls that protect them from Titans.",
     epidsodes_screens: [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/04/Attack-On-Titan-Season-1-Featured.jpg",
       "https://www.cnet.com/a/img/resize/0be58470ec9e81334a79039e7460c31131c6c091/hub/2023/11/02/0559a7a4-5336-4bce-ba34-26400e0e843c/attack-on-titan-series-finale.jpg?auto=webp&fit=crop&height=900&width=1200",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOawOfwxln5QbxPwTU3nbYaW0SNuuhBn5nhA&s",
     ],
+    avg_rating: 9.0,
+    genres: ["Action", "Drama", "Dark Fantasy", "Shounen"],
   },
   {
     name: "One Piece",
@@ -64,6 +71,8 @@ export const animeList = [
       "https://pbs.twimg.com/media/F5EWtiDXIAAHbze?format=jpg&name=4096x4096",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZxrKtjOYWaIwWiY9l_zsnOkMMY8YQ2qJXHg&s",
     ],
+    avg_rating: 8.7,
+    genres: ["Action", "Adventure", "Fantasy"],
   },
   {
     name: "Demon Slayer",
@@ -77,6 +86,8 @@ export const animeList = [
       "https://preview.redd.it/6biha74bzau71.jpg?width=640&crop=smart&auto=webp&s=17dac6ae68bb577269c7bd4ddb2870ea863cf200",
       "https://static01.nyt.com/images/2024/02/22/multimedia/22demonslayer-review-fglb/22demonslayer-review-fglb-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
     ],
+    avg_rating: 8.5,
+    genres: ["Action", "Supernatural", "Drama"],
   },
   {
     name: "Tokyo Revengers",
@@ -90,6 +101,8 @@ export const animeList = [
       "https://static1.colliderimages.com/wordpress/wp-content/uploads/2024/01/kazutora-smiling-freakishly.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZO1u77Ap3KHqTl96njadAgQnb9UYofYQrQ&s",
     ],
+    avg_rating: 7.8,
+    genres: ["Action", "Drama", "Time Travel", "Shounen"],
   },
   {
     name: "Black Clover",
@@ -103,6 +116,8 @@ export const animeList = [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/09/Asta-and-Yami-fighting-together-in-Black-Clover.jpg",
       "https://images.immediate.co.uk/production/volatile/sites/3/2023/07/Black-Clover-2-Cropped-3af38da.jpg?quality=90&resize=980,654",
     ],
+    avg_rating: 8.7,
+    genres: ["Action", "Adventure", "Fantasy"],
   },
   {
     name: "Dragon Ball Z",
@@ -116,6 +131,8 @@ export const animeList = [
       "https://64.media.tumblr.com/7f428dc65dec102736e36fb24db22f72/tumblr_oc79adeCk71qggwgeo1_1280.png",
       "https://64.media.tumblr.com/2b9f3bb049966ebefb3fe05c932528ed/caf94369f9db1995-a5/s1280x1920/f9a2a2c54e932e9a60a5b16291c258389d65765b.png",
     ],
+    avg_rating: 8.9,
+    genres: ["Action", "Adventure", "Martial Arts"],
   },
   {
     name: "Death Note",
@@ -129,6 +146,8 @@ export const animeList = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSphGwff2WN6q2A7kk7eHLV_UW_MvmVLDjNFw&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLFW-guqlgjIC74qxB0KSLPiX6F_Sh9wSsJw&s",
     ],
+    avg_rating: 9.0,
+    genres: ["Psychological", "Thriller", "Supernatural"],
   },
   {
     name: "Fullmetal Alchemist: Brotherhood",
@@ -142,6 +161,8 @@ export const animeList = [
       "https://img.hulu.com/user/v3/artwork/20663ad3-ba5f-4f12-9670-e94010238f39?base_image_bucket_name=image_manager&base_image=7348bc88-d08b-47d3-80fc-e6e18cd896c7&size=600x338&format=webp",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCW0r-e4vGvgGdjVNmr4BdwBgL3KkY8YYi-g&s",
     ],
+    avg_rating: 9.2,
+    genres: ["Action", "Adventure", "Fantasy"],
   },
   {
     name: "Hunter x Hunter",
@@ -155,6 +176,8 @@ export const animeList = [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/12/hunter-x-hunter-the-gang-s-all-here.jpg",
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/04/the-zodiacs-gather-for-their-meeting-in-hunter-x-hunter.jpg",
     ],
+    avg_rating: 8.9,
+    genres: ["Action", "Adventure", "Fantasy"],
   },
   {
     name: "Steins;Gate",
@@ -168,6 +191,8 @@ export const animeList = [
       "https://i.redd.it/j3rsfmg85if61.jpg",
       "https://static0.cbrimages.com/wordpress/wp-content/uploads/2020/04/1.-Steins-Gate.jpg",
     ],
+    avg_rating: 8.8,
+    genres: ["Sci-Fi", "Thriller", "Psychological"],
   },
   {
     name: "Code Geass",
@@ -181,6 +206,8 @@ export const animeList = [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/code-geass-lelouch.jpg",
       "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/11525975/Screen_Shot_2018_06_12_at_4.08.35_PM.png?quality=90&strip=all&crop=7.9038997214485,0,84.192200557103,100",
     ],
+    avg_rating: 8.7,
+    genres: ["Action", "Mecha", "Psychological", "Thriller"],
   },
   {
     name: "Sword Art Online",
@@ -194,6 +221,8 @@ export const animeList = [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/07/Screen-Shot-2022-07-06-at-7.17.33-PM.png",
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/07/Screen-Shot-2022-07-06-at-7.25.16-PM.png",
     ],
+    avg_rating: 7.5,
+    genres: ["Action", "Adventure", "Fantasy", "Romance"],
   },
   {
     name: "Chainsaw Man",
@@ -207,6 +236,8 @@ export const animeList = [
       "https://animecorner.me/wp-content/uploads/2022/10/chainsaw-man-anime-opening-video.jpg",
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/11/chainsaw-man-episode-3.jpg",
     ],
+    avg_rating: 8.5,
+    genres: ["Action", "Horror", "Supernatural", "Comedy"],
   },
   {
     name: "Mob Psycho 100",
@@ -220,6 +251,8 @@ export const animeList = [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/04/mob-psycho-100-s-mob.jpg",
       "https://animeuknews.net/app/uploads/2019/01/Mob4-1024x581.jpg",
     ],
+    avg_rating: 8.6,
+    genres: ["Action", "Comedy", "Supernatural", "Psychological"],
   },
   {
     name: "Vinland Saga",
@@ -233,6 +266,8 @@ export const animeList = [
       "https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/10/Vinland-Saga.jpg",
       "https://a.storyblok.com/f/178900/640x360/9ccad1dd4c/vinland-saga-season-2.png",
     ],
+    avg_rating: 8.7,
+    genres: ["Action", "Adventure", "Historical"],
   },
   {
     name: "Psycho-Pass",
@@ -246,5 +281,7 @@ export const animeList = [
       "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/12/psycho-pass-banner.jpg",
       "https://theglorioblog.com/wp-content/uploads/2012/10/psychopass3screen.jpg",
     ],
+    avg_rating: 8.3,
+    genres: ["Psychological", "Sci-Fi", "Crime", "Thriller"],
   },
 ];

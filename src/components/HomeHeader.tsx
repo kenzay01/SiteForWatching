@@ -35,8 +35,8 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+    if (e) e.preventDefault();
     if (searchValue.length > 0) {
       setIsSearchOpen(false);
       setIsFocused(false);
@@ -57,13 +57,21 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
             <div className="search-list-anime" ref={searchRef}>
               <div
                 className={`search-container ${isSearchOpen ? "open" : ""}`}
-                onClick={() => setIsSearchOpen(true)}
-                onDoubleClick={() => {
-                  setIsSearchOpen(false);
-                  setIsFocused(false);
+                onClick={() => {
+                  if (isSearchOpen) return;
+                  setIsSearchOpen(true);
                 }}
               >
-                <IoSearch className="search-icon" />
+                <IoSearch
+                  className="search-icon"
+                  onClick={() => {
+                    if (isSearchOpen) {
+                      handleSubmit();
+                    } else {
+                      return;
+                    }
+                  }}
+                />
                 {isSearchOpen && (
                   <input
                     type="text"

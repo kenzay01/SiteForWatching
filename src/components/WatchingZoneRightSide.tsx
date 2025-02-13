@@ -22,9 +22,9 @@ export default function WatchingZoneRightSide({
   animeName: Anime;
   images: string[];
   setCurrentImage: (image: string) => void;
-  sliderRef: React.RefObject<HTMLDivElement>;
-  descriptionRef: React.RefObject<HTMLDivElement>;
-  commentsRef: React.RefObject<HTMLDivElement>;
+  sliderRef: React.RefObject<HTMLDivElement | null>;
+  descriptionRef: React.RefObject<HTMLDivElement | null>;
+  commentsRef: React.RefObject<HTMLDivElement | null>;
   isDescriptionExpanded: boolean;
   setIsDescriptionExpanded: (expanded: boolean) => void;
   isCommentsExpanded: boolean;

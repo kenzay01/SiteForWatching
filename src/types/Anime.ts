@@ -5,4 +5,6 @@ export type Anime = {
   link: string;
   description: string;
   epidsodes_screens: string[];
+  avg_rating: number;
+  genres: string[];
 };
