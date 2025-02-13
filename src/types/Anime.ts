@@ -7,4 +7,5 @@ export type Anime = {
   epidsodes_screens: string[];
   avg_rating: number;
   genres: string[];
+  author: string;
 };

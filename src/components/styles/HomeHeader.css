@@ -114,6 +114,28 @@
   transition: background 0.1s;
 }
 
-/* .search-list h1:hover {
-  background: #493d9e;
-} */
+.close-search-icon {
+  color: #efe9d5;
+  font-size: 1.75em;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
+  cursor: pointer;
+}
+.search-list-link-to-sp {
+  text-decoration: none;
+  color: #372f7a;
+  font-size: 14px;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  font-weight: normal;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+  border-bottom: 2px solid #493d9e;
+}
+.search-list-link-to-sp div {
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.search-list-link-to-sp div:hover {
+  color: #efe9d5;
+}

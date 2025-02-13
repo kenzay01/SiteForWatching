@@ -1,0 +1,103 @@
+.search-element {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  margin: 0 20px;
+  background-color: #5e52b7;
+  border-bottom: 5px solid #493d9e;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* justify-content: space-between; */
+}
+.search-element:hover {
+  background-color: #493d9e;
+  border-radius: 40px 40px 0 0;
+}
+
+.search-element-img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  border-radius: 40px 20px;
+  overflow: hidden;
+  border: 4px solid #3d3677;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.search-element-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search-element-info-container {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #efe9d5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.search-element-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.search-element-title,
+.search-element-rating,
+.search-element-author,
+.search-element-genres {
+  display: flex;
+}
+.search-element-genres {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.search-element-title b,
+.search-element-rating b,
+.search-element-author b,
+.search-element-genres b {
+  flex: 1;
+}
+.search-element-title span,
+.search-element-rating span,
+.search-element-author span {
+  /* flex: 3; */
+  font-weight: normal;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #3d3677;
+}
+.search-element-genres-list {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #efe9d5;
+  font-size: 14px;
+  padding: 15px 5px;
+  background-color: #3d3677;
+  border-radius: 10px;
+  width: 500px;
+  flex-wrap: wrap;
+}
+.search-element-genre {
+  font-weight: normal;
+  padding: 3px 10px 5px 10px;
+  background-color: #5e52b7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* .search-element-watch-btn {
+  text-align: end;
+  padding: 10px 15px;
+  background-color: #5e52b7;
+} */

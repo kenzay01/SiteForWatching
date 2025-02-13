@@ -1,10 +1,11 @@
 .search-screen {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: 50px 0;
+  min-height: 100vh;
+  width: 100%;
+  padding: 50px 0;
 }
 
 .search-screen-content {
@@ -18,7 +19,7 @@
 
 .return-btn.search {
   position: absolute;
-  top: 0px;
+  top: 50px;
   left: 40px;
   width: 90px;
   padding: 0 10px 0 5px;
@@ -32,7 +33,7 @@
 }
 .search-screen-input-container {
   position: absolute;
-  top: -5%;
+  top: -30px;
   right: 5%;
   padding: 10px;
   background-color: #3e348a;
@@ -74,20 +75,28 @@
 }
 
 .search-screen-header-info-container {
-  flex: 1;
-  justify-content: end;
+  flex: 2;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   border: 2px solid #5e52b7;
-  padding: 10px 20px;
   border-radius: 10px;
-}
-
-.search-screen-header-info {
-  font-weight: normal;
+  padding: 10px 0 10px 30px;
+  gap: 30px;
   font-size: 16px;
+}
+.search-screen-header-info,
+.search-screen-header-title {
+  font-weight: normal;
 }
 
 .search-screen-list {
   padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 20px;
 }
 
 .search-screen-filters {
@@ -104,7 +113,7 @@
   justify-content: space-between;
   align-items: center;
   color: #efe9d5;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   border: 2px solid #5e52b7;
   font-size: 16px;
@@ -153,12 +162,14 @@
 .genre-filter input {
   margin-right: 5px;
 }
-
+/* .genre-filter input:hover {
+  background-color: #5e52b7;
+} */
 .choose-genres-btn {
   background-color: #3e348a;
   color: #efe9d5;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: normal;
   font-size: 16px;
@@ -214,6 +225,9 @@
 .genre-filter label {
   cursor: pointer;
 }
+.genre-filter:hover {
+  background-color: #5e52b7;
+}
 .confirm-btn {
   background-color: #5e52b7;
   color: #efe9d5;
@@ -227,7 +241,7 @@
 
 .selected-genres {
   margin-bottom: 10px;
-  padding: 0 20px 10px 20px;
+  padding: 0 20px 15px 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

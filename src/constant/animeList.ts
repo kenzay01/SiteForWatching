@@ -13,6 +13,7 @@ export const animeList = [
     ],
     avg_rating: 8.7,
     genres: ["Action", "Supernatural", "Dark Fantasy", "Shounen"],
+    author: "Gege Akutami",
   },
   {
     name: "Naruto",
@@ -28,6 +29,7 @@ export const animeList = [
     ],
     avg_rating: 8.3,
     genres: ["Action", "Adventure", "Martial Arts", "Shounen"],
+    author: "Masashi Kishimoto",
   },
   {
     name: "My Hero Academia",
@@ -43,6 +45,7 @@ export const animeList = [
     ],
     avg_rating: 7.9,
     genres: ["Action", "Superhero", "School", "Shounen"],
+    author: "Kōhei Horikoshi",
   },
   {
     name: "Attack on Titan",
@@ -58,6 +61,7 @@ export const animeList = [
     ],
     avg_rating: 9.0,
     genres: ["Action", "Drama", "Dark Fantasy", "Shounen"],
+    author: "Hajime Isayama",
   },
   {
     name: "One Piece",
@@ -73,6 +77,7 @@ export const animeList = [
     ],
     avg_rating: 8.7,
     genres: ["Action", "Adventure", "Fantasy"],
+    author: "Eiichiro Oda",
   },
   {
     name: "Demon Slayer",
@@ -88,6 +93,7 @@ export const animeList = [
     ],
     avg_rating: 8.5,
     genres: ["Action", "Supernatural", "Drama"],
+    author: "Koyoharu Gotouge",
   },
   {
     name: "Tokyo Revengers",
@@ -103,6 +109,7 @@ export const animeList = [
     ],
     avg_rating: 7.8,
     genres: ["Action", "Drama", "Time Travel", "Shounen"],
+    author: "Ken Wakui",
   },
   {
     name: "Black Clover",
@@ -118,6 +125,7 @@ export const animeList = [
     ],
     avg_rating: 8.7,
     genres: ["Action", "Adventure", "Fantasy"],
+    author: "Yūki Tabata",
   },
   {
     name: "Dragon Ball Z",
@@ -133,6 +141,7 @@ export const animeList = [
     ],
     avg_rating: 8.9,
     genres: ["Action", "Adventure", "Martial Arts"],
+    author: "Akira Toriyama",
   },
   {
     name: "Death Note",
@@ -148,6 +157,7 @@ export const animeList = [
     ],
     avg_rating: 9.0,
     genres: ["Psychological", "Thriller", "Supernatural"],
+    author: "Tsugumi Ohba",
   },
   {
     name: "Fullmetal Alchemist: Brotherhood",
@@ -163,6 +173,7 @@ export const animeList = [
     ],
     avg_rating: 9.2,
     genres: ["Action", "Adventure", "Fantasy"],
+    author: "Hiromu Arakawa",
   },
   {
     name: "Hunter x Hunter",
@@ -178,6 +189,7 @@ export const animeList = [
     ],
     avg_rating: 8.9,
     genres: ["Action", "Adventure", "Fantasy"],
+    author: "Yoshihiro Togashi",
   },
   {
     name: "Steins;Gate",
@@ -193,6 +205,7 @@ export const animeList = [
     ],
     avg_rating: 8.8,
     genres: ["Sci-Fi", "Thriller", "Psychological"],
+    author: "Chiyomaru Shikura",
   },
   {
     name: "Code Geass",
@@ -208,6 +221,7 @@ export const animeList = [
     ],
     avg_rating: 8.7,
     genres: ["Action", "Mecha", "Psychological", "Thriller"],
+    author: "Goro Taniguchi",
   },
   {
     name: "Sword Art Online",
@@ -223,6 +237,7 @@ export const animeList = [
     ],
     avg_rating: 7.5,
     genres: ["Action", "Adventure", "Fantasy", "Romance"],
+    author: "Reki Kawahara",
   },
   {
     name: "Chainsaw Man",
@@ -238,6 +253,7 @@ export const animeList = [
     ],
     avg_rating: 8.5,
     genres: ["Action", "Horror", "Supernatural", "Comedy"],
+    author: "Tatsuki Fujimoto",
   },
   {
     name: "Mob Psycho 100",
@@ -253,6 +269,7 @@ export const animeList = [
     ],
     avg_rating: 8.6,
     genres: ["Action", "Comedy", "Supernatural", "Psychological"],
+    author: "ONE",
   },
   {
     name: "Vinland Saga",
@@ -268,6 +285,7 @@ export const animeList = [
     ],
     avg_rating: 8.7,
     genres: ["Action", "Adventure", "Historical"],
+    author: "Makoto Yukimura",
   },
   {
     name: "Psycho-Pass",
@@ -283,5 +301,6 @@ export const animeList = [
     ],
     avg_rating: 8.3,
     genres: ["Psychological", "Sci-Fi", "Crime", "Thriller"],
+    author: "Gen Urobuchi",
   },
 ];

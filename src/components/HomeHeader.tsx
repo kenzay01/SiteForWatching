@@ -2,6 +2,7 @@ import "./styles/HomeHeader.css";
 import { IoSearch } from "react-icons/io5";
 import { useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
 import type { Anime } from "../types/Anime";
 
 export default function Header({ animeList }: { animeList: Anime[] }) {
@@ -73,18 +74,35 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
                   }}
                 />
                 {isSearchOpen && (
-                  <input
-                    type="text"
-                    placeholder="Search anime..."
-                    autoFocus
-                    onFocus={() => setIsFocused(true)}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                    value={searchValue}
-                  />
+                  <>
+                    <input
+                      type="text"
+                      placeholder="Search anime..."
+                      autoFocus
+                      onFocus={() => setIsFocused(true)}
+                      onChange={(e) => setSearchValue(e.target.value)}
+                      value={searchValue}
+                    />
+                    <IoClose
+                      className="close-search-icon"
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setIsFocused(false);
+                      }}
+                    />
+                  </>
                 )}
               </div>
               {isFocused && filteredAnimeList.length > 0 && (
                 <div className="search-list">
+                  <div
+                    className="search-list-link-to-sp"
+                    onClick={() => {
+                      navigate("/search");
+                    }}
+                  >
+                    <div>Open search page</div>
+                  </div>
                   {filteredAnimeList.map((anime) => (
                     <div
                       key={anime.name}

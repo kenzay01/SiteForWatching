@@ -15,6 +15,10 @@ export default function App() {
       element: <WatchingScreen />,
     },
     {
+      path: "/search",
+      element: <SearchScreen />,
+    },
+    {
       path: "/search/:searchValue",
       element: <SearchScreen />,
     },

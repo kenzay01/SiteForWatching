@@ -1,10 +1,11 @@
 import "./styles/SearchScreen.css";
-import { IoCaretBack, IoSearch } from "react-icons/io5";
+import { IoCaretBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import SearchElement from "../components/SearchElement";
 import { animeList } from "../constant/animeList";
 import { useParams } from "react-router-dom";
 import { useMemo, useState, useEffect, useRef } from "react";
+import SearchScreenHeader from "../components/SearchScreenHeader";
 
 export default function SearchScreen() {
   const navigate = useNavigate();
@@ -14,7 +15,6 @@ export default function SearchScreen() {
   const [sortBy, setSortBy] = useState("name");
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
   const [showGenreSelector, setShowGenreSelector] = useState(false);
-
   const genres = [...new Set(animeList.flatMap((anime) => anime.genres))];
   const genreSelectorRef = useRef<HTMLDivElement | null>(null);
   const genreButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -83,61 +83,21 @@ export default function SearchScreen() {
         <IoCaretBack className="return-icon" /> Home
       </div>
       <div className="search-screen-content">
-        <form onSubmit={handleSubmit}>
-          <div className="search-screen-input-container">
-            <IoSearch className="search-icon search-screen-icn" />
-            <input
-              type="text"
-              placeholder="Search anime..."
-              autoFocus
-              onChange={(e) => setSearchTerm(e.target.value)}
-              value={searchTerm}
-            />
-          </div>
-        </form>
-        <div className="search-screen-header">
-          <div className="search-screen-header-info-container">
-            <div className="search-screen-header-title">Search Results:</div>
-            <div className="search-screen-header-info">
-              {filteredAnimeList.length} results found
-            </div>
-          </div>
-          <div className="search-screen-filters">
-            <div className="search-screen-sort-genres">
-              <button
-                ref={genreButtonRef}
-                className="choose-genres-btn"
-                onClick={handleGenreSelect}
-              >
-                Choose genres
-              </button>
-              {showGenreSelector && (
-                <div ref={genreSelectorRef} className="genre-filters">
-                  {genres.map((genre) => (
-                    <div
-                      key={genre}
-                      className={`genre-filter ${
-                        selectedGenres.includes(genre) ? "active" : ""
-                      }`}
-                      onClick={() => handleGenreClick(genre)}
-                    >
-                      <label>{genre}</label>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <select
-              onChange={(e) => setSortBy(e.target.value)}
-              value={sortBy}
-              className="search-screen-sort-by"
-            >
-              <option value="name">Sort by Name</option>
-              <option value="rating">Sort by Rating</option>
-            </select>
-          </div>
-        </div>
+        <SearchScreenHeader
+          filteredAnimeList={filteredAnimeList}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          selectedGenres={selectedGenres}
+          showGenreSelector={showGenreSelector}
+          genreButtonRef={genreButtonRef}
+          genreSelectorRef={genreSelectorRef}
+          handleGenreSelect={handleGenreSelect}
+          genres={genres}
+          handleGenreClick={handleGenreClick}
+          handleSubmit={handleSubmit}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
         <div className="search-screen-list">
           <div className="selected-genres">
             {selectedGenres.length > 0 ? (
