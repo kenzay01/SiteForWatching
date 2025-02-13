@@ -40,7 +40,6 @@ export default function SearchElement({ anime }: { anime: Anime }) {
             </div>
           </div>
         </div>
-        {/* <div className="search-element-watch-btn">Watch</div> */}
       </div>
     </div>
   );
