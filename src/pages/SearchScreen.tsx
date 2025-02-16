@@ -43,6 +43,8 @@ export default function SearchScreen() {
     setSearchValue(searchTerm);
     if (searchTerm.length > 0) {
       navigate(`/search/${searchTerm}`);
+    } else {
+      navigate("/search");
     }
   };
 
