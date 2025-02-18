@@ -1,0 +1,113 @@
+.search-list-element {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 2px solid #493d9e;
+  color: #efe9d5;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 30px;
+}
+.search-list-element:hover {
+  background-color: #493d9e;
+  border-radius: 0px 0px 10px 10px;
+  .search-list-element-title {
+    background-color: #5e52b7;
+  }
+  .search-list-element-rating div {
+    background-color: #5e52b7;
+  }
+  .search-list-element-rating span {
+    background-color: #493d9e;
+  }
+  .search-list-element-genres-list {
+    background-color: #5e52b7;
+  }
+  .search-list-element-genre {
+    background-color: #493d9e;
+  }
+  .search-list-element-img {
+    scale: 1.05;
+  }
+  .search-list-element-info {
+    scale: 1.02;
+  }
+}
+.search-list-element-img {
+  width: 100px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #3d3677;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+}
+.search-list-element-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search-list-element-info {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* gap: 15px; */
+  transition: all 0.2s ease;
+}
+.search-list-element-title {
+  flex: 3;
+  font-size: 20px;
+  max-width: 300px;
+  background-color: #493d9e;
+  padding: 6px 10px;
+  border-radius: 10px;
+  margin-right: 40px;
+  max-width: 250px;
+  transition: all 0.2s ease;
+}
+.search-list-element-rating {
+  flex: 2;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.search-list-element-rating div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  background-color: #493d9e;
+  transition: all 0.2s ease;
+}
+.search-list-element-rating span {
+  padding: 0 7px 1px 7px;
+  border-radius: 5px;
+  background-color: #5e52b7;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+.search-list-element-genres-list {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  background-color: #493d9e;
+  padding: 6px 10px;
+  border-radius: 10px;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+.search-list-element-genre {
+  font-size: 14px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background-color: #5e52b7;
+  color: #efe9d5;
+  transition: all 0.2s ease;
+}

@@ -1,11 +1,16 @@
 import "./styles/SearchScreen.css";
 import { IoCaretBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import SearchElement from "../components/SearchElement";
+import SearchWildElement from "../components/SearchListComponents/SearchWildElement";
+import SearchListElement from "../components/SearchListComponents/SearchListElement";
+import SearchGridElement from "../components/SearchListComponents/SearchGridElement";
 import { animeList } from "../constant/animeList";
 import { useParams } from "react-router-dom";
 import { useMemo, useState, useEffect, useRef } from "react";
 import SearchScreenHeader from "../components/SearchScreenHeader";
+import { TbLayoutListFilled } from "react-icons/tb";
+import { MdViewList } from "react-icons/md";
+import { MdApps } from "react-icons/md";
 
 export default function SearchScreen() {
   const navigate = useNavigate();
@@ -79,6 +84,16 @@ export default function SearchScreen() {
     };
   }, []);
 
+  const [layoutIndex, setLayoutIndex] = useState(1);
+  const layoutOptions = [
+    { icon: <TbLayoutListFilled />, name: "WildList" },
+    { icon: <MdViewList />, name: "List" },
+    { icon: <MdApps />, name: "Grid" },
+  ];
+  const handleLayoutChange = () => {
+    setLayoutIndex((layoutIndex + 1) % layoutOptions.length);
+  };
+
   return (
     <div className="search-screen">
       <div className="return-btn search" onClick={() => navigate("/")}>
@@ -99,6 +114,9 @@ export default function SearchScreen() {
           handleSubmit={handleSubmit}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
+          layoutIndex={layoutIndex}
+          layoutOptions={layoutOptions}
+          handleLayoutChange={handleLayoutChange}
         />
         <div className="search-screen-list">
           <div className="selected-genres">
@@ -119,9 +137,32 @@ export default function SearchScreen() {
               <span>No genres selected</span>
             )}
           </div>
-          {filteredAnimeList.map((anime) => (
-            <SearchElement key={anime.name} anime={anime} />
-          ))}
+          <div
+            className={
+              layoutOptions[layoutIndex].name === "Grid"
+                ? "search-screen-list-container-grid"
+                : ""
+            }
+          >
+            {filteredAnimeList.map((anime) => (
+              <div
+                key={anime.link}
+                className={
+                  layoutOptions[layoutIndex].name === "Grid"
+                    ? "search-screen-list-container-grid-item"
+                    : ""
+                }
+              >
+                {layoutIndex === 0 ? (
+                  <SearchWildElement anime={anime} />
+                ) : layoutIndex === 1 ? (
+                  <SearchListElement anime={anime} />
+                ) : (
+                  <SearchGridElement anime={anime} />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

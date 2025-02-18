@@ -1,5 +1,10 @@
+import { useState } from "react";
+import { JSX } from "react";
 import type { Anime } from "../types/Anime";
 import { IoSearch } from "react-icons/io5";
+// import { TbLayoutListFilled } from "react-icons/tb";
+// import { PiListBold } from "react-icons/pi";
+// import { MdApps } from "react-icons/md";
 export default function SearchScreenHeader({
   filteredAnimeList,
   sortBy,
@@ -14,6 +19,9 @@ export default function SearchScreenHeader({
   handleSubmit,
   setSearchTerm,
   searchTerm,
+  layoutIndex,
+  layoutOptions,
+  handleLayoutChange,
 }: {
   filteredAnimeList: Anime[];
   sortBy: string;
@@ -28,7 +36,19 @@ export default function SearchScreenHeader({
   handleSubmit: (e: React.FormEvent) => void;
   setSearchTerm: React.Dispatch<React.SetStateAction<string | undefined>>;
   searchTerm: string | undefined;
+  layoutIndex: number;
+  layoutOptions: { icon: JSX.Element; name: string }[];
+  handleLayoutChange: () => void;
 }) {
+  // const [layoutIndex, setLayoutIndex] = useState(0);
+  // const layoutOptions = [
+  //   { icon: <TbLayoutListFilled />, name: "WildList" },
+  //   { icon: <PiListBold />, name: "List" },
+  //   { icon: <MdApps />, name: "Grid" },
+  // ];
+  // const handleLayoutChange = () => {
+  //   setLayoutIndex((layoutIndex + 1) % layoutOptions.length);
+  // };
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -84,6 +104,14 @@ export default function SearchScreenHeader({
             <option value="name">Sort by Name</option>
             <option value="rating">Sort by Rating</option>
           </select>
+          <div
+            className="search-screen-layout-options"
+            onClick={() => {
+              handleLayoutChange();
+            }}
+          >
+            {layoutOptions[layoutIndex].icon}
+          </div>
         </div>
       </div>
     </>

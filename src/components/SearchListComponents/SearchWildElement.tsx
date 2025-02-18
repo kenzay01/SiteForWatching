@@ -1,38 +1,38 @@
-import type { Anime } from "../types/Anime";
-import "./styles/SearchElement.css";
+import type { Anime } from "../../types/Anime";
+import "../styles/SearchWildElement.css";
 import { useNavigate } from "react-router-dom";
-export default function SearchElement({ anime }: { anime: Anime }) {
+export default function SearchWildElement({ anime }: { anime: Anime }) {
   const navigate = useNavigate();
   console.log("anime", anime);
   return (
     <div
-      className="search-element"
+      className="search-wild-element"
       onClick={() => {
         navigate(`/anime/${anime.link}`, {
           state: { animeName: anime },
         });
       }}
     >
-      <div className="search-element-img">
+      <div className="search-wild-element-img">
         <img src={anime.logo} alt={anime.name} />
       </div>
-      <div className="search-element-info-container">
-        <div className="search-element-info">
-          <div className="search-element-title">
+      <div className="search-wild-element-info-container">
+        <div className="search-wild-element-info">
+          <div className="search-wild-element-title">
             <b>Name:</b> <span>{anime.name}</span>
           </div>
-          <div className="search-element-rating">
+          <div className="search-wild-element-rating">
             <b>Rating:</b> <span>{anime.avg_rating}/10</span>
           </div>
-          <div className="search-element-author">
+          <div className="search-wild-element-author">
             <b>Author:</b> <span>{anime.author}</span>
           </div>
-          <div className="search-element-genres">
+          <div className="search-wild-element-genres">
             <b>Genres:</b>
-            <div className="search-element-genres-list">
+            <div className="search-wild-element-genres-list">
               {anime.genres.map((genre) => {
                 return (
-                  <div key={genre} className="search-element-genre">
+                  <div key={genre} className="search-wild-element-genre">
                     {genre}
                   </div>
                 );
