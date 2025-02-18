@@ -4,6 +4,7 @@ import { useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import type { Anime } from "../types/Anime";
+import { MdAccountCircle } from "react-icons/md";
 
 export default function Header({ animeList }: { animeList: Anime[] }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -48,6 +49,9 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
   };
   return (
     <div className="header-container">
+      <div className="header-logo" onClick={() => navigate("/")}>
+        <img src="/src/assets/logoWithoutBack.png" alt="" />
+      </div>
       <div className="main-header">
         <div className="header-icons">
           <form
@@ -122,7 +126,9 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
               )}
             </div>
           </form>
-          <h1 className="profile-icon">profile</h1>
+          <div className="header-account-container">
+            <MdAccountCircle className="header-account-icon" />
+          </div>
         </div>
       </div>
     </div>

@@ -40,15 +40,6 @@ export default function SearchScreenHeader({
   layoutOptions: { icon: JSX.Element; name: string }[];
   handleLayoutChange: () => void;
 }) {
-  // const [layoutIndex, setLayoutIndex] = useState(0);
-  // const layoutOptions = [
-  //   { icon: <TbLayoutListFilled />, name: "WildList" },
-  //   { icon: <PiListBold />, name: "List" },
-  //   { icon: <MdApps />, name: "Grid" },
-  // ];
-  // const handleLayoutChange = () => {
-  //   setLayoutIndex((layoutIndex + 1) % layoutOptions.length);
-  // };
   return (
     <>
       <form onSubmit={handleSubmit}>

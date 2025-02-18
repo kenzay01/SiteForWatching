@@ -1,0 +1,53 @@
+.fire-today-container {
+  height: 725px;
+  margin: 50px 0;
+  background-color: #5e52b7;
+  border: 10px solid #493d9e;
+  border-left: none;
+  border-right: none;
+  padding: 20px 60px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fire-today-top {
+  flex: 1;
+  display: flex;
+  gap: 30px;
+}
+.fire-today-title {
+  font-size: 60px;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    #e9ba0f,
+    #6e62cb,
+    #efe9d5,
+    #8a82c9,
+    #e9ba0f
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 5s infinite ease-in-out alternate;
+  user-select: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.fire-today-top-one {
+  flex: 1;
+  background-color: #493d9e;
+}
+.fire-today-top-others {
+  flex: 1;
+  background-color: #493d9e;
+}

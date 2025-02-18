@@ -67,6 +67,7 @@
 .search-screen-header {
   height: 100px;
   background-color: #3e348a;
+  background: linear-gradient(to right, #3e348a, #4d42a0, #3e348a);
   padding: 10px 30px 20px 30px;
   display: flex;
   align-items: end;

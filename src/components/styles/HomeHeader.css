@@ -2,15 +2,16 @@
   position: relative;
 }
 .main-header {
-  position: absolute;
-  top: 35px;
-  left: 0;
   width: 100%;
+  height: 125px;
   display: flex;
   justify-content: end;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
   font-size: 1em;
+  background: linear-gradient(to right, #5e52b7, #8076c8, #5e52b7);
+  border-bottom: 7px solid #493d9e;
+  padding: 0 40px;
 }
 .header-icons {
   display: flex;
@@ -23,13 +24,14 @@
   background-color: #5e52b7;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 20px;
   border: 5px solid #493d9e;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
   width: 60px;
   overflow: hidden;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 
 .search-container.open {
@@ -39,7 +41,7 @@
 
 .search-icon {
   color: #efe9d5;
-  font-size: 1.75em;
+  font-size: 24px;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
 }
 
@@ -70,23 +72,22 @@
   background: #5e52b7;
   border: 5px solid #493d9e;
   border-radius: 20px;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
   max-height: 200px;
-  overflow-y: auto; /* Прокрутка залишається */
+  overflow-y: auto;
   padding: 10px;
   padding-right: 12px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   color: #efe9d5;
-
-  /* Приховуємо скролбар у всіх браузерах */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer та Edge */
+  z-index: 1000;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .search-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 .search-list-item {
   display: flex;
@@ -138,4 +139,49 @@
 }
 .search-list-link-to-sp div:hover {
   color: #efe9d5;
+}
+.header-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 20px;
+  border: 5px solid #493d9e;
+  border-top: none;
+  /* background-color: #5e52b7; */
+  background: radial-gradient(circle, #443a93, #766db6);
+  border-radius: 0px 0px 60px 60px;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+  z-index: 100;
+  cursor: pointer;
+  user-select: none;
+}
+.header-logo img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  transition: all 0.2s ease;
+}
+.header-logo img:hover {
+  transform: scale(1.05);
+}
+.header-account-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+  background-color: #5e52b7;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 5px solid #493d9e;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+.header-account-icon {
+  color: #efe9d5;
+  font-size: 24px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
 }
