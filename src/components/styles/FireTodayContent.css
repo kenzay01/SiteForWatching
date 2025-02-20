@@ -1,5 +1,5 @@
 .fire-today-container {
-  height: 725px;
+  height: 800px;
   margin: 50px 0;
   background-color: #5e52b7;
   border: 10px solid #493d9e;
@@ -13,7 +13,8 @@
 .fire-today-top {
   flex: 1;
   display: flex;
-  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
 }
 .fire-today-title {
   font-size: 60px;
@@ -43,11 +44,137 @@
   }
 }
 
-.fire-today-top-one {
+.fire-today-top-one-container {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.fire-today-top-one {
+  position: relative;
+  padding: 20px;
+  background-color: transparent; 
+  border-radius: 50px 50px 0 0; 
+  z-index: 1; 
+}
+
+.fire-today-top-one::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #493d9e, #5e52b7); 
+  border-radius: 50px 50px 0 0; 
+  z-index: -1; 
+  padding: 5px; 
+}
+
+
+.fire-today-top-one-img{
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 40px ;
+  overflow: hidden;
+  position: relative;
+}
+.fire-today-top-one-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.fire-today-top-one-content{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+}
+.top-one-fire-gif{
+  position: absolute;
+  bottom: -20px;
+  right: 30px;
+  width: 80px;
+  height: auto;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.1s;
+  filter: drop-shadow(0 0 3px #ff8000);
+}
+.top-one-fire-gif img{
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+.top-one-fire-gif:hover{
+  scale: 1.05;
+  transform: translateY(-5px);
+  filter: drop-shadow(0 0 10px #ff8000);
+}
+.fire-today-top-one-content-name{
+  font-size: 35px;
+  font-weight: bold;
+  color: #efe9d5;
+}
+.fire-today-top-one-content-views-comments-rating{
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
+  color: #efe9d5;
+  user-select: none;
+}
+.fire-today-top-one-content-views, .fire-today-top-one-content-comments, .fire-today-top-other-content-rating{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
   background-color: #493d9e;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+.fire-today-top-one-content-views:hover, .fire-today-top-one-content-comments:hover, .fire-today-top-other-content-rating:hover{
+  transform: scale(1.05);
+}
+.fire-today-top-others-container {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  /* margin: 0 50px 50px 0; */
+  margin-bottom: 50px;
 }
 .fire-today-top-others {
-  flex: 1;
-  background-color: #493d9e;
+  position: relative;
+  padding: 20px;
+  background-color: transparent; 
+  border-radius: 50px 50px 0 0; 
+  width: 80%;
+  height: 100%;
+  z-index: 1; 
+}
+
+.fire-today-top-others::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #493d9e, #5e52b7); 
+  border-radius: 50px 50px 0 0; 
+  z-index: -1; 
+  padding: 20px; 
 }

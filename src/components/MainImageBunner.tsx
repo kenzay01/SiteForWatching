@@ -42,17 +42,6 @@ export default function MainImageBunner({ animeList }: { animeList: Anime[] }) {
         </div>
       </div>
       <div>
-        {/* <h1 className="home-content-name">{animeList[currentAnime].name}</h1> */}
-        {/* <button
-          onClick={() => {
-            navigate(`/anime/${animeList[currentAnime].link}`, {
-              state: { animeName: animeList[currentAnime] },
-            });
-          }}
-          className="home-content-btn"
-        >
-          watch now
-        </button> */}
       </div>
       <div
         onClick={() => {

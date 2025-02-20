@@ -8,4 +8,10 @@ export type Anime = {
   avg_rating: number;
   genres: string[];
   author: string;
+  views: number;
+  commentsList:{
+    user: string;
+    comment: string;
+    date: string;
+  }[];
 };

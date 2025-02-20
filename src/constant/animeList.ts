@@ -1,3 +1,5 @@
+import { use } from "react";
+
 export const animeList = [
   {
     name: "Jujutsu Kaisen",
@@ -14,6 +16,34 @@ export const animeList = [
     avg_rating: 8.7,
     genres: ["Action", "Supernatural", "Dark Fantasy", "Shounen"],
     author: "Gege Akutami",
+    views: 10000,
+    commentsList: [
+      {
+        user: "User1",
+        comment: "This is a great anime",
+        date: "2024-07-01",
+      },
+      {
+        user: "User2",
+        comment: "I love this anime",
+        date: "2024-07-02",
+      },
+      {
+        user: "User3",
+        comment: "This is a bad anime",
+        date: "2024-07-03",
+      },
+      {
+        user: "User4",
+        comment: "I hate this anime",
+        date: "2024-07-04",
+      },
+      {
+        user: "User5",
+        comment: "I am in this anime",
+        date: "2024-07-05",
+      }
+    ],
   },
   {
     name: "Naruto",
@@ -30,6 +60,14 @@ export const animeList = [
     avg_rating: 8.3,
     genres: ["Action", "Adventure", "Martial Arts", "Shounen"],
     author: "Masashi Kishimoto",
+    views: 4597,
+    commentsList: [
+      {
+        user
+        : "User1",
+        comment: "This is a great anime",
+        date: "2024-07-01",
+      },]
   },
   {
     name: "My Hero Academia",
@@ -46,6 +84,8 @@ export const animeList = [
     avg_rating: 7.9,
     genres: ["Action", "Superhero", "School", "Shounen"],
     author: "Kōhei Horikoshi",
+    views: 5000,
+    commentsList:[],
   },
   {
     name: "Attack on Titan",
@@ -62,6 +102,14 @@ export const animeList = [
     avg_rating: 9.0,
     genres: ["Action", "Drama", "Dark Fantasy", "Shounen"],
     author: "Hajime Isayama",
+    views: 120,
+    commentsList:[
+      {
+        user: "User2",
+        comment: "I love this anime",
+        date: "2024-07-02",
+      }
+    ],
   },
   {
     name: "One Piece",
@@ -78,6 +126,19 @@ export const animeList = [
     avg_rating: 8.7,
     genres: ["Action", "Adventure", "Fantasy"],
     author: "Eiichiro Oda",
+    views: 4980,
+    commentsList:[
+      {
+        user: "User2",
+        comment: "I love this anime",
+        date: "2024-07-02",
+      },
+      {
+        user:"User3",
+        comment: "This is a bad anime",
+        date: "2024-07-03",
+      }
+    ],
   },
   {
     name: "Demon Slayer",
@@ -94,6 +155,19 @@ export const animeList = [
     avg_rating: 8.5,
     genres: ["Action", "Supernatural", "Drama"],
     author: "Koyoharu Gotouge",
+    views: 890,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I hate this anime",
+        date: "2024-07-02",
+      },
+      {
+        user:"User3",
+        comment: "This is a bad anime",
+        date: "2024-07-03",
+      }
+    ],
   },
   {
     name: "Tokyo Revengers",
@@ -110,6 +184,14 @@ export const animeList = [
     avg_rating: 7.8,
     genres: ["Action", "Drama", "Time Travel", "Shounen"],
     author: "Ken Wakui",
+    views: 8500,
+    commentsList:[
+      {
+        user: "User4",
+        comment: "I love this anime",
+        date: "2024-07-02",
+      }
+    ],
   },
   {
     name: "Black Clover",
@@ -126,6 +208,19 @@ export const animeList = [
     avg_rating: 8.7,
     genres: ["Action", "Adventure", "Fantasy"],
     author: "Yūki Tabata",
+    views: 3896,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I hate this anime",
+        date: "2024-07-04",
+      },
+      {
+        user:"User3",
+        comment: "This is a great anime",
+        date: "2024-07-05",
+      }
+    ],
   },
   {
     name: "Dragon Ball Z",
@@ -142,6 +237,14 @@ export const animeList = [
     avg_rating: 8.9,
     genres: ["Action", "Adventure", "Martial Arts"],
     author: "Akira Toriyama",
+    views: 100,
+    commentsList:[
+      {
+        user: "User2",
+        comment: "I love this anime",
+        date: "2024-07-03",
+      }
+    ],
   },
   {
     name: "Death Note",
@@ -158,6 +261,19 @@ export const animeList = [
     avg_rating: 9.0,
     genres: ["Psychological", "Thriller", "Supernatural"],
     author: "Tsugumi Ohba",
+    views: 7777,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I hate this anime",
+        date: "2024-07-03",
+      },
+      {
+        user:"User3",
+        comment: "This is a great anime",
+        date: "2024-07-04",
+      }
+    ],
   },
   {
     name: "Fullmetal Alchemist: Brotherhood",
@@ -174,6 +290,14 @@ export const animeList = [
     avg_rating: 9.2,
     genres: ["Action", "Adventure", "Fantasy"],
     author: "Hiromu Arakawa",
+    views: 5,
+    commentsList:[
+      {
+        user: "User3",
+        comment: "I love this anime",
+        date: "2024-07-04",
+      }
+    ],
   },
   {
     name: "Hunter x Hunter",
@@ -190,6 +314,29 @@ export const animeList = [
     avg_rating: 8.9,
     genres: ["Action", "Adventure", "Fantasy"],
     author: "Yoshihiro Togashi",
+    views: 9998,
+    commentsList:[
+      {
+        user: "User4",
+        comment: "I like this anime",
+        date: "2024-07-03",
+      },
+      {
+        user:"User3",
+        comment: "This is a great anime",
+        date: "2024-07-04",
+      },
+      {
+        user:"User2",
+        comment: "I love this anime",
+        date: "2024-07-05",
+      },
+      {
+        user:"User1",
+        comment: "I am in this anime",
+        date: "2024-07-05",
+      }
+    ],
   },
   {
     name: "Steins;Gate",
@@ -206,6 +353,14 @@ export const animeList = [
     avg_rating: 8.8,
     genres: ["Sci-Fi", "Thriller", "Psychological"],
     author: "Chiyomaru Shikura",
+    views: 600,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I hate this anime",
+        date: "2024-07-03",
+      }
+    ],
   },
   {
     name: "Code Geass",
@@ -222,6 +377,14 @@ export const animeList = [
     avg_rating: 8.7,
     genres: ["Action", "Mecha", "Psychological", "Thriller"],
     author: "Goro Taniguchi",
+    views: 798,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I am in this anime",
+        date: "2024-07-05",
+      }
+    ],
   },
   {
     name: "Sword Art Online",
@@ -238,6 +401,14 @@ export const animeList = [
     avg_rating: 7.5,
     genres: ["Action", "Adventure", "Fantasy", "Romance"],
     author: "Reki Kawahara",
+    views: 20,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I love this anime",
+        date: "2024-07-04",
+      }
+    ],
   },
   {
     name: "Chainsaw Man",
@@ -254,6 +425,19 @@ export const animeList = [
     avg_rating: 8.5,
     genres: ["Action", "Horror", "Supernatural", "Comedy"],
     author: "Tatsuki Fujimoto",
+    views: 6565,
+    commentsList:[
+      {
+        user: "User3",
+        comment: "I hate this anime",
+        date: "2024-07-04",
+      },
+      {
+        user:"User2",
+        comment: "This is a bad anime",
+        date: "2024-07-05",
+      }
+    ],
   },
   {
     name: "Mob Psycho 100",
@@ -270,6 +454,19 @@ export const animeList = [
     avg_rating: 8.6,
     genres: ["Action", "Comedy", "Supernatural", "Psychological"],
     author: "ONE",
+    views: 999,
+    commentsList:[
+      {
+        user: "User1",
+        comment: "I am in this anime",
+        date: "2024-07-04",
+      },
+      {
+        user:"User2",
+        comment: "I love this anime",
+        date: "2024-07-05",
+      }
+    ],
   },
   {
     name: "Vinland Saga",
@@ -286,6 +483,8 @@ export const animeList = [
     avg_rating: 8.7,
     genres: ["Action", "Adventure", "Historical"],
     author: "Makoto Yukimura",
+    views: 6,
+    commentsList:[],
   },
   {
     name: "Psycho-Pass",
@@ -302,5 +501,7 @@ export const animeList = [
     avg_rating: 8.3,
     genres: ["Psychological", "Sci-Fi", "Crime", "Thriller"],
     author: "Gen Urobuchi",
+    views: 2,
+    commentsList:[],
   },
 ];

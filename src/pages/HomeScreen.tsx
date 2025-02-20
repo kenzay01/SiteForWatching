@@ -8,11 +8,12 @@ export default function HomeScreen({ animeList }: { animeList: Anime[] }) {
   const randomAnimesForBanner = [...animeList]
     .sort(() => Math.random() - 0.5)
     .slice(0, 5);
+  const animeFire = [...animeList].sort((a, b) => b.views - a.views).filter((_, i) => i < 5);
   return (
     <div className="home-container">
       <HomeHeader animeList={animeList} />
       <MainImageBunner animeList={randomAnimesForBanner} />
-      <FireTodayContent animeFire={animeList} />
+      <FireTodayContent animeFire={animeFire} />
       <Outlet />
     </div>
   );
