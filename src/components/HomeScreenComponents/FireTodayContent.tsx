@@ -121,7 +121,13 @@ export default function FireTodayContent({
                 <div className="medal-top-container">
                   <img src={medals[index].src} alt="" className={`medal-${medals[index].name}`}/>
                 </div>
-                <div className="fire-today-top-other-content">
+                <div className="fire-today-top-other-content"
+                  onClick={() => {
+                    navigate(`/anime/${anime.link}`, {
+                      state: { animeName: anime },
+                    });
+                  }}
+                >
                   <div className="fire-today-top-other-img">
                     <img src={anime.logo} alt="anime-logo" />
                   </div>
