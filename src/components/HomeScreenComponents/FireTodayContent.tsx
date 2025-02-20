@@ -11,10 +11,26 @@ export default function FireTodayContent({
   animeFire: Anime[];
 }) {
   const navigate = useNavigate();
+  
+  const medals =[{
+    name:"top2",
+    src:"src/assets/medals/top2.png",
+  },
+  {
+    name:"top3",
+    src:"src/assets/medals/top3.png",
+  },{
+    name:"top4",
+    src:"src/assets/medals/top4.png",
+  },{
+    name:"top5",
+    src:"src/assets/medals/top5.png",
+  }
+]
+  
   const [topOneAnime] = useState<Anime>(animeFire[0]);
   const [transformStyle, setTransformStyle] = useState("");
   const animationFrame = useRef<number | null>(null);
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (animationFrame.current) {
       cancelAnimationFrame(animationFrame.current);
@@ -49,6 +65,9 @@ export default function FireTodayContent({
       <div className="fire-today-top">
         <div className="fire-today-top-one-container">
           <div className="fire-today-top-one">
+            <div className="medal-top1">
+              <img src="src/assets/medals/top1.png" alt="" />
+            </div>
             <div
               className="fire-today-top-one-img"
               onMouseMove={handleMouseMove}
@@ -86,32 +105,38 @@ export default function FireTodayContent({
                   {topOneAnime.commentsList.length}
                 </div>
               </div>
-              <div className="top-one-fire-gif">
+              {/* <div className="top-one-fire-gif">
                 <img src="https://i.gifer.com/5Mz4.gif" alt="" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
         <div className="fire-today-top-others-container">
           <div className="fire-today-top-others">
-            {animeFire.slice(1).map((anime) => (
+            {animeFire.slice(1).map((anime, index) => (
               <div
                 key={anime.link}
                 className="fire-today-top-other"
-                onClick={() => {
-                  navigate(`/anime/${anime.link}`, {
-                    state: { animeName: anime },
-                  });
-                }}
-              >
-                <div className="fire-today-top-other-img">
-                  {/* <img src={anime.logo} alt="anime-logo" /> */}
+              > 
+                <div className="medal-top-container">
+                  <img src={medals[index].src} alt="" className={`medal-${medals[index].name}`}/>
                 </div>
                 <div className="fire-today-top-other-content">
+                  <div className="fire-today-top-other-img">
+                    <img src={anime.logo} alt="anime-logo" />
+                  </div>
+                  <div 
+                  className="fire-today-top-other-content-views-comments-name"
+                  onClick={() => {
+                    navigate(`/anime/${anime.link}`, {
+                      state: { animeName: anime },
+                    });
+                  }}
+                  >
                   <div className="fire-today-top-other-content-name">
                     {anime.name}
                   </div>
-                  <div className="fire-today-top-other-content-views-comments">
+                    <div className="fire-today-top-other-content-views-comments">
                     <div className="fire-today-top-other-content-views">
                       <FaEye className="fire-today-top-other-content-views-icon" />
                       {anime.views}
@@ -119,6 +144,7 @@ export default function FireTodayContent({
                     <div className="fire-today-top-other-content-comments">
                       <MdComment className="fire-today-top-other-content-comments-icon" />
                       {anime.commentsList.length}
+                    </div>
                     </div>
                   </div>
                 </div>
