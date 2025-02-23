@@ -5,13 +5,33 @@ import { useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import type { Anime } from "../types/Anime";
 import { MdAccountCircle } from "react-icons/md";
+import { FaAddressBook } from "react-icons/fa";
+import { IoMdSettings } from "react-icons/io";
+import { FiLogOut } from "react-icons/fi";
 
 export default function Header({ animeList }: { animeList: Anime[] }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef<HTMLDivElement>(null);
+  const accountDropDownItems=[{
+    name:"Profile",
+    // link:"/profile",
+    icon: <FaAddressBook/>
+  },{
+    name:"Settings",
+    // link:"/settings",
+    icon: <IoMdSettings/>
+  },{
+    name:"Logout",
+    // link:"/logout",
+    icon: <FiLogOut/>
+  }]
+
+
+
   const filteredAnimeList = useMemo(() => {
     if (searchValue.length === 0)
       return animeList.filter((anime, index) => {
@@ -65,6 +85,9 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
                 onClick={() => {
                   if (isSearchOpen) return;
                   setIsSearchOpen(true);
+                  if (isAccountOpen) {
+                    setIsAccountOpen(false);
+                  }
                 }}
               >
                 <IoSearch
@@ -72,9 +95,7 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
                   onClick={() => {
                     if (isSearchOpen) {
                       handleSubmit();
-                    } else {
-                      return;
-                    }
+                    } 
                   }}
                 />
                 {isSearchOpen && (
@@ -118,7 +139,10 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
                         });
                       }}
                     >
+                      <div className="search-list-item-img">
+
                       <img src={anime.logo} alt={anime.name} />
+                      </div>
                       <h1>{anime.name}</h1>
                     </div>
                   ))}
@@ -126,8 +150,54 @@ export default function Header({ animeList }: { animeList: Anime[] }) {
               )}
             </div>
           </form>
-          <div className="header-account-container">
-            <MdAccountCircle className="header-account-icon" />
+          <div className="header-account-tab-container">
+          <div className={`header-account-container ${isAccountOpen ? "open" : ""}`}
+            onClick={() => {
+              setIsAccountOpen((prev) => !prev);
+              if (isSearchOpen) {
+                setIsSearchOpen(false);
+              }
+            }}
+          >
+            {isAccountOpen && (
+              <div className="header-account-username">
+                User Name
+              </div>
+            )}
+            <MdAccountCircle className="header-account-icon" 
+              // onClick={() => {
+              //   // if (isAccountOpen) {
+              //     // console.log("close");
+              //     setIsAccountOpen(false);
+              //   // } 
+              // }}
+            />
+          </div>
+            {isAccountOpen && (
+              <div className="header-account-dropdown">
+                {
+                  accountDropDownItems.map((item,index)=>(
+                    <div className="header-account-dropdown-item" key={index}>
+                      <div className="header-account-dropdown-item-icon">
+                        {item.icon}
+                      </div>
+                      <div className="header-account-dropdown-item-name">
+                        {item.name}
+                      </div>
+                  </div>
+                  ))
+                }
+                {/* <div className="header-account-dropdown-item">
+                  <div>Profile</div>
+                </div>
+                <div className="header-account-dropdown-item">
+                  <div>Settings</div>
+                </div>
+                <div className="header-account-dropdown-item">
+                  <div>Logout</div>
+                </div> */}
+              </div>
+            )}
           </div>
         </div>
       </div>

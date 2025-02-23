@@ -10,7 +10,7 @@
 }
 .main-image {
   width: 80%;
-  height: 95vh;
+  height: 85vh;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -85,12 +85,12 @@
   }
 }
 .main-image-arrow-go {
-  font-size: 1.25em;
+  font-size: 45px;
   color: #493d9e;
 }
 .swap-main-img-btn {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 100%;
   outline: none;
   border: none;
@@ -98,18 +98,17 @@
   background-color: #5e52b7;
   border: 5px solid #493d9e;
   cursor: pointer;
-  /* box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5); */
 }
 
 .swap-main-img-btn.lft {
   position: absolute;
   top: 40%;
-  left: 7%;
+  left: 8%;
   padding-right: 5px;
 }
 .swap-main-img-btn.rgt {
   position: absolute;
   top: 40%;
-  right: 7%;
+  right: 8%;
   padding-left: 5px;
 }
