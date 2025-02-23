@@ -221,7 +221,7 @@
 
 .toggle-btn {
   position: absolute;
-  bottom: 5px;
+  bottom: 8px;
   right: 10px;
   background: none;
   border: none;
@@ -233,7 +233,7 @@
   display: block;
   text-align: center;
   padding: 1px 5px 3px 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #493d9e;
 }
 .playzone-description {
@@ -398,10 +398,15 @@
   margin-top: 20px;
   padding: 10px;
   background-color: #f44336;
+  border: 3px solid #c71515;
   color: white;
-  border: none;
   border-radius: 5px;
+  /* border: none; */
   cursor: pointer;
+  transition: all 0.1s ease;
+}
+.close-btn:hover {
+  background-color: #c71515;
 }
 .rating-modal-rate {
   font-size: 5em;
